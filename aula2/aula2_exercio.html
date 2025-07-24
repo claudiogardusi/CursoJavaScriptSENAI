@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Produtos</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; margin: 20px;">
+    <h1>Cadastro de Produtos</h1>
+
+    <form>
+      <label for="produto">Nome do Produto:</label>
+      <input type="text" id="produto" name="produto" placeholder="Digite aqui o nome" /><br /><br />
+
+      <label for="preco">Preço:</label>
+      <input type="number" id="preco" name="preco" placeholder="Digite seu preço" /><br /><br />
+
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" name="quantidade" placeholder="Digite a quantidade" /><br /><br />
+
+      <button type="button">Adicionar</button> <!-- Botão ainda sem função -->
+      <br />
+    </form>
+    <br>
+
+    <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="width:50%">Nome </th>
+          <th style="width:15%">Preço</th>
+          <th style="width:15%">Quantidade </th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Caneta Esferográfica</td>
+          <td style="text-align: right">R$ 4.50</td>
+          <td style="text-align: center">20 </td>
+          <td style="text-align: right">R$ 90.00</td>
+        </tr>
+        <tr>
+          <td>Caderno 100 folhas</td>
+          <td style="text-align: right">R$ 12.00</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: right">R$ 60.00</td>
+        </tr>
+        <tr>
+          <td>Lápis de cor com 24</td>
+          <td style="text-align: right">R$ 15,00</td>
+          <td style="text-align: center">10</td>
+          <td style="text-align: right">R$ 150.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
