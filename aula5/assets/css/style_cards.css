@@ -1,0 +1,89 @@
+/* Estilos gerais */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #ddf7a2;
+    --text-color: #333;
+    --cel-color: #c7c7b0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #ebf0e4;
+    margin: 0;
+    padding: 40px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0000001a;
+    padding: 24px;
+    width: 220px;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.blue {
+    background-color: #4a90e2;
+}
+.yelow {
+    background-color: #f5a623;
+}
+.green {
+    background-color: #7ed321;
+}
+.cyan {
+    background-color: #50e3c2;
+}
+.brown {
+    background-color: #8b572a;
+}
+
+/* Estilos para desktop */
+@media (min-width: 768px) {
+    .cards-container {
+        gap: 32px;
+    }
+    .card {
+        width: 400px;
+        padding: 32px;
+    }
+}
+
+/* Estilos para celular */
+@media (max-width: 767px) {
+    body {
+        padding: 16px;
+        background-color: var(--cel-color);
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .card {
+        width: 100%;
+        max-width: 250px;
+        padding: 16px;
+    }
+    #title {
+        font-size: 30px;
+    }
+}
