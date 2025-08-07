@@ -50,39 +50,47 @@
     <script>
         let corSelecionada = '';
 
-        document.getElementById('cor1').addEventListener('click', function() {
+        // Seleção de cor
+        let c1 = document.getElementById('cor1');
+        let c2 = document.getElementById('cor2');
+        let c3 = document.getElementById('cor3');
+        let c4 = document.getElementById('cor4');
+
+        c1.onclick = function() {
             corSelecionada = 'red';
-            document.getElementById('cor1').className = 'opcaoCor selecionada';
-            document.getElementById('cor2').className = 'opcaoCor';
-            document.getElementById('cor3').className = 'opcaoCor';
-            document.getElementById('cor4').className = 'opcaoCor';
-        });
+            c1.className = 'opcaoCor selecionada';
+            c2.className = 'opcaoCor';
+            c3.className = 'opcaoCor';
+            c4.className = 'opcaoCor';
+        }
 
-        document.getElementById('cor2').addEventListener('click', function() {
+        c2.onclick = function() {
             corSelecionada = 'green';
-            document.getElementById('cor1').className = 'opcaoCor';
-            document.getElementById('cor2').className = 'opcaoCor selecionada';
-            document.getElementById('cor3').className = 'opcaoCor';
-            document.getElementById('cor4').className = 'opcaoCor';
-        });
+            c1.className = 'opcaoCor';
+            c2.className = 'opcaoCor selecionada';
+            c3.className = 'opcaoCor';
+            c4.className = 'opcaoCor';
+        }
 
-        document.getElementById('cor3').addEventListener('click', function() {
+        c3.onclick = function() {
             corSelecionada = 'blue';
-            document.getElementById('cor1').className = 'opcaoCor';
-            document.getElementById('cor2').className = 'opcaoCor';
-            document.getElementById('cor3').className = 'opcaoCor selecionada';
-            document.getElementById('cor4').className = 'opcaoCor';
-        });
+            c1.className = 'opcaoCor';
+            c2.className = 'opcaoCor';
+            c3.className = 'opcaoCor selecionada';
+            c4.className = 'opcaoCor';
+        }
 
-        document.getElementById('cor4').addEventListener('click', function() {
+        c4.onclick = function() {
             corSelecionada = 'orange';
-            document.getElementById('cor1').className = 'opcaoCor';
-            document.getElementById('cor2').className = 'opcaoCor';
-            document.getElementById('cor3').className = 'opcaoCor';
-            document.getElementById('cor4').className = 'opcaoCor selecionada';
-        });
+            c1.className = 'opcaoCor';
+            c2.className = 'opcaoCor';
+            c3.className = 'opcaoCor';
+            c4.className = 'opcaoCor selecionada';
+        }
 
-        document.getElementById('mostrar_btn').addEventListener('click', function() {
+        // Botão mostrar
+        let mostrarBtn = document.getElementById('mostrar_btn');
+        mostrarBtn.onclick = function() {
             let texto = document.getElementById('textoInput').value;
             let mostrar = document.getElementById('mostrar');
 
@@ -93,12 +101,14 @@
                 mostrar.innerHTML = 'Digite algo!';
                 mostrar.style.color = 'black';
             }
-        });
+        }
 
-        document.getElementById('limpar_btn').addEventListener('click', function() {
+        // Botão limpar
+        let limparBtn = document.getElementById('limpar_btn');
+        limparBtn.onclick = function() {
             document.getElementById('textoInput').value = '';
             document.getElementById('mostrar').innerHTML = '';
-        });
+        }
     </script>
 
 </body>
