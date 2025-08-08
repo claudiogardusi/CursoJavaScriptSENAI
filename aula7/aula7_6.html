@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Modelo</title>
+    <link rel="stylesheet" href="./assets/css/style_1.css" />
+</head>
+
+<body>
+    <section class="container">
+        <h1>Aula 7 Atividade 6</h1>
+        <p>
+            -- Número Positivo e Maior que 15 --
+            <br />
+            Verifique se um número atende às duas condições: <br>
+            É positivo e maior que 15
+        </p>
+    </section>
+    <section class="container">
+        <h2>Resultado</h2>
+        <p id="resultado"></p>
+        <script>
+            function verificarNumero() {
+                const numero = parseFloat(prompt("Digite um número:"));
+
+                if (isNaN(numero)) {
+                    document.getElementById("resultado").innerText = 'Por favor, insira um número válido.';
+                } else if (numero > 0 && numero > 15) {
+                    document.getElementById("resultado").innerText = 'O número '+ numero +' é positivo e maior que 15.';
+                } else {
+                    document.getElementById("resultado").innerText = 'O número '+ numero+' não atende às condições.';
+                }
+            }
+
+            verificarNumero();
+        </script>
+    </section>
+
+    <script src="./assets/js/main_1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Modelo</title>
+    <link rel="stylesheet" href="./assets/css/style_1.css" />
+</head>
+
+<body>
+    <section class="container">
+        <h1>Aula 7 Atividade 7</h1>
+        <p>
+            -- Divisível por 9 e 6 --
+            <br />
+            Verifique se um número é divisível por 9 e 6.
+        </p>
+    </section>
+    <section class="container">
+        <h2>Resultado</h2>
+        <p id="resultado"></p>
+        <script>
+            function verificarDivisibilidade() {
+                const numero = parseFloat(prompt("Digite um número:"));
+
+                if (isNaN(numero)) {
+                    document.getElementById("resultado").innerText = 'Por favor, insira um número válido.';
+                } else if (numero % 9 === 0 && numero % 6 === 0) {
+                    document.getElementById("resultado").innerText = 'O número ' + numero + ' é divisível por 9 e 6.';
+                } else {
+                    document.getElementById("resultado").innerText = 'O número ' + numero + ' não é divisível por 9 e 6.';
+                }
+            }
+
+            verificarDivisibilidade();
+        </script>
+    </section>
+
+</body>
+
+</html>
