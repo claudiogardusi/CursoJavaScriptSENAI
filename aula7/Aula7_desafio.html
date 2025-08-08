@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Reservas de Mesas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e4e9e1;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 95%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="button"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+
+    }
+
+    input[type="button"]:hover {
+      background-color: #45a049;
+    }
+
+    .reserva {
+      max-width: 400px;
+      background-color: #e6ffe6;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-left: 5px solid #4CAF50;
+    }
+
+    .centralizar {
+      max-width: 500px;
+      margin: 0 auto;
+      align-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="centralizar">
+    <h2>Sistema de Reservas</h2>
+    <form id="reservaForm">
+      <label>Nome do Cliente:</label>
+      <input type="text" id="nome">
+
+      <label>Número de Pessoas:</label>
+      <input type="number" id="numPessoas">
+
+      <label>Tipo de Mesa:</label>
+      <select id="tipoMesa">
+        <option value="padrao">Padrão (R$50,00 / pessoa)</option>
+        <option value="vip">VIP (R$80,00 / pessoa)</option>
+        <option value="varanda">Varanda Vista Externa (R$100,00 / pessoa)</option>
+      </select>
+
+      <input type="button" value="Adicionar Reserva" onclick="adicionarReserva()">
+    </form>
+  </div>
+  <div class="centralizar">
+    <h3>Reservas Realizadas:</h3>
+    <div id="listaReservas"></div>
+  </div>
+  <script>
+    let listaHTML = "";
+
+    function adicionarReserva() {
+      let nome = document.getElementById("nome").value;
+      let numPessoas = document.getElementById("numPessoas").value;
+      let tipoMesa = document.getElementById("tipoMesa").value;
+
+      let consumoMinimo = 0;
+
+      if (tipoMesa === "padrao") {
+        consumoMinimo = 50.00;
+      } else if (tipoMesa === "vip") {
+        consumoMinimo = 80.00;
+      } else if (tipoMesa === "varanda") {
+        consumoMinimo = 100.00;
+      }
+
+      let valorTotal = consumoMinimo * numPessoas;
+
+      listaHTML = listaHTML +
+        "<div class='reserva'>" +
+        "<strong>Cliente:</strong> " + nome + "<br>" +
+        "<strong>Tipo de Mesa:</strong> " + tipoMesa + "<br>" +
+        "<strong>Número de Pessoas:</strong> " + numPessoas + "<br>" +
+        "<strong>Consumo Mínimo por Pessoa:</strong> R$" + consumoMinimo + ",00<br>" +
+        "<strong>Valor Total:</strong> R$" + valorTotal + ",00" +
+        "</div>";
+
+      document.getElementById("listaReservas").innerHTML = listaHTML;
+
+      // Limpa os campos
+      document.getElementById("nome").value = "";
+      document.getElementById("numPessoas").value = "";
+      document.getElementById("tipoMesa").value = "padrao";
+    }
+  </script>
+</body>
+
+</html>

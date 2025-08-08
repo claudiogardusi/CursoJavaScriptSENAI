@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Modelo</title>
+    <link rel="stylesheet" href="./assets/css/style_1.css" />
+  </head>
+
+  <body>
+    <section class="container">
+      <h1>Aula 7 Atividade 3</h1>
+      <p>
+        Par ou Ímpar
+        <br />
+        Declare um número qualquer e determine se é par ou ímpar.
+      </p>
+    </section>
+    <section class="container">
+      <h2>Resultado</h2>
+      <p id="resultado"></p>
+      <script>
+        const numero = prompt("Digite um numero:");
+        let resultado;
+        if (numero % 2 === 0) {
+          resultado = `Você digitou o número ${numero}, ele é par.`;
+        } else {
+          resultado = `Você digitou o número ${numero}, ele é ímpar.`;
+        }
+
+        document.getElementById("resultado").innerText = resultado;
+      </script>
+    </section>
+
+    <script src="./assets/js/main_1.js"></script>
+  </body>
+</html>
